@@ -34,8 +34,8 @@ const pow = function (base, n) {
     else
 		return base * pow(base, n - 1);
 };
-const test = pow(3,3);
-console.log(test);
+const test1 = pow(3,3);
+console.log(test1);
   
   
   
@@ -50,30 +50,30 @@ const ind = function(string, index) {
 	};
 	return ind(string, string.length - 1);
 };
-const test = reverse("Hayk");
-console.log(test)
+const test2 = reverse("Hayk");
+console.log(test2)
 
 
 
 // Exercise 4
 const checkerboard = function(n, stars) {
 	const lines = n;
-	const interprat = function(n, stars) {
+	const comb = function(n, stars) {
 		if(n <= 0)
 			return "";
 		if(stars)
-			return " " + interprat(n-1, !stars);
+			return " " + comb(n-1, !stars);
 		else
-			return "*" + interprat(n-1, !stars);
+			return "*" + comb(n-1, !stars);
 };
 
 const a = function(n) {
 	if(n <= 0)
 		return;
 	if(n%2 === 0)
-		console.log(" " + interprat(2 * lines));
+		console.log(" " + comb(2 * lines));
 	else
-		console.log(interprat(2 * lines));
+		console.log(comb(2 * lines));
 	a(n-1);
 };
 
